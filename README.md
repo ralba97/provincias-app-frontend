@@ -1,4 +1,6 @@
 # Registro Social Frontend App
+- La aplicación consiste de una pantalla web, desarrollada con el framework angular 17, a travès de la cual se muestra opciones con las que el usuario puede interactuar, mostrandole mensajes de error en los campos requeridos del formulario.
+- Se comunica con con APIs desarrollados con la tecnología de Spring boot y java para caragar la informaciòn de los combos mostrados en la pantalla.
 
 ## Requisitos:
 -  [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11
