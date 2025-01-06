@@ -1,4 +1,4 @@
-# Registro Social App
+# Registro Social Frontend App
 
 ## Requisitos:
 -  [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11

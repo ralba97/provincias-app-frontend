@@ -71,9 +71,18 @@ export default class RegistroSocialComponent implements OnInit {
   loadProvinces(): void {
     this.provincesService.getProvinces().subscribe({
       next: (respuesta) => {
-        this.provinces = respuesta.data;
+        if (respuesta.data) {
+          this.provinces = respuesta.data;
+        } else {
+          if (respuesta.mensaje) {
+            this.messageService.add({ severity: 'error', summary: 'Message:', detail: respuesta.mensaje });
+          }
+        }
       },
-      error: (err) => console.error('Error loading provinces:', err),
+      error: (err) => {
+        console.error('Error loading provinces:', err);
+        this.messageService.add({ severity: 'error', summary: 'Message:', detail: 'Servicio que obtiene el listado de provincias no disponible.' });
+      },
     });
   }
 
@@ -84,8 +93,19 @@ export default class RegistroSocialComponent implements OnInit {
     this.selectedParroquia = '';
     if (this.selectedProvince) {
       this.provincesService.getCantones(this.selectedProvince).subscribe({
-        next: (respuesta) => (this.cantones = respuesta.data),
-        error: (err) => console.error('Error loading cantones:', err),
+        next: (respuesta) => {
+          if (respuesta.data) {
+            this.cantones = respuesta.data;
+          } else {
+            if (respuesta.mensaje) {
+              this.messageService.add({ severity: 'error', summary: 'Message:', detail: respuesta.mensaje });
+            }
+          }
+        },
+        error: (err) => {
+          console.error('Error loading cantones:', err);
+          this.messageService.add({ severity: 'error', summary: 'Message:', detail: 'Servicio que obtiene el listado de cantones no disponible.' });
+        },
       });
     }
   }
@@ -96,8 +116,19 @@ export default class RegistroSocialComponent implements OnInit {
     this.selectedParroquia = '';
     if (this.selectedCanton) {
       this.provincesService.getParroquias(this.selectedCanton).subscribe({
-        next: (respuesta) => (this.parroquias = respuesta.data),
-        error: (err) => console.error('Error loading parroquias:', err),
+        next: (respuesta) => {
+          if (respuesta.data) {
+            this.parroquias = respuesta.data;
+          } else {
+            if (respuesta.mensaje) {
+              this.messageService.add({ severity: 'error', summary: 'Message:', detail: respuesta.mensaje });
+            }
+          }
+        },
+        error: (err) => {
+          console.error('Error loading parroquias:', err);
+          this.messageService.add({ severity: 'error', summary: 'Message:', detail: 'Servicio que obtiene el listado de parroquias no disponible.' });
+        },
       });
     }
   }
