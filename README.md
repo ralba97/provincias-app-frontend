@@ -4,9 +4,15 @@
 -  [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11
 - Node version 19.9.0
 - Package manager (npm) version 9.6.3
+- Git version 2.35.1
+- Sistema Operativo windows 10 (64 bits)
+- Editor de código Visual Studio Code 1.96.2
 
 ## Levantar ambiente:
-- Clonar proyecto de reposiorio git 
+- Clonar proyecto de reposiorio git clone https://github.com/ralba97/provincias-app-frontend.git
+- Cargar el proyecto desde el editor de código Visual Studio Code
+- Abrir una terminal y ejecutar el comando npm install
+
 
 
 ## Development server

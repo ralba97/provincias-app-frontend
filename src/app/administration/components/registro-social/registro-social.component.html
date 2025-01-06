@@ -1,0 +1,66 @@
+<div class="row" style="padding-bottom: 2%;">
+  <div class="col-12">
+    <h3>Registro Social</h3>
+  </div>
+</div>
+<div class="row divH3">
+  <div class="col-1"><label for="province">Mes:</label></div>
+  <div class="col-2"></div>
+  <div class="col-1"><label for="province">Provincia:</label></div>
+  <div class="col-2"></div>
+  <div class="col-1"><label for="canton">Cantón:</label></div>
+  <div class="col-2"></div>
+  <div class="col-1"><label for="parroquia">Parroquia:</label></div>
+  <div class="col-2"></div>
+  <div class="col-1"><label for="parroquia">Nivel Bienestar:</label></div>
+  <div class="col-2"></div>
+  <div class="col-1" style="margin-right: 70px;"><label for="parroquia">Sexo:</label></div>
+  <div class="col-1"><label for="parroquia">Etnia:</label></div>
+</div>
+<div class="row">
+  <div class="col-1">
+    <p-dropdown [options]="meses" [(ngModel)]="selectedMes" optionLabel="nombre" optionValue="id" [required]="true"
+      placeholder="Seleccione..." appenTo="body" (onChange)="onProvinceChange()"
+      [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-1">
+    <p-dropdown [options]="provinces" [(ngModel)]="selectedProvince" optionLabel="nombre" optionValue="id"
+      [required]="true" placeholder="Seleccione..." appenTo="body" (onChange)="onProvinceChange()"
+      [emptyMessage]="'No hay resultados'">
+    </p-dropdown>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-1">
+    <p-dropdown [options]="cantones" [(ngModel)]="selectedCanton" optionLabel="nombre" optionValue="id"
+      placeholder="Seleccione..." appenTo="body" (onChange)="onCantonChange()"
+      [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-1">
+    <p-dropdown [options]="parroquias" [(ngModel)]="selectedParroquia" appenTo="body" optionLabel="nombre"
+      optionValue="id" placeholder="Seleccione..." [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-1">
+    <p-dropdown [options]="registroSociales" [(ngModel)]="selectedRegistroSocial" optionLabel="nombre" optionValue="id"
+      [required]="true" placeholder="Seleccione..." appenTo="body" [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-1" style="margin-right: 70px;">
+    <p-dropdown [options]="sexos" [(ngModel)]="selectedSexo" optionLabel="nombre" optionValue="id" [required]="true"
+      placeholder="Seleccione..." appenTo="body" [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+  <div class="col-1">
+    <p-dropdown [options]="etnias" [(ngModel)]="selectedEtnia" optionLabel="nombre" optionValue="id" [required]="true"
+      placeholder="Seleccione..." appenTo="body" [emptyMessage]="'No hay resultados'"></p-dropdown>
+  </div>
+</div>
+<div class="row" style="margin-top: 5%;">
+  <div class="col-12" style="text-align: center;">
+    <div class="container">
+      <button type="button" class="button" (click)="enviarFormulario()">Enviar</button>
+      <p-messages></p-messages>
+    </div>
+  </div>
+</div>
